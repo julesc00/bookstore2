@@ -24,3 +24,19 @@ docker-compose exec web python manage.py makemigrations books
 docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 ```
+
+For troubleshooting when issues with container images:  
+```aiignore
+docker image prune -f
+docker-compose build --no-cache
+docker-compose up -d
+
+# If the above didn't work:
+docker-compose down --rmi all
+docker-compose up -d --build
+
+# Restart docker
+sudo systemctl restart docker
+docker-compose up -d --build
+
+```
