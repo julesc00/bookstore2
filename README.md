@@ -11,3 +11,16 @@ docker-compose command: `docker-compose exec web python manage.py startapp accou
 docker-compose down
 docker-compose up -d --build
 ```
+
+Making migrations to an already existing model, but early development stages  
+**Note:** Do this from the model start rather.
+```aiignore
+docker-compose exec web rm -r books/migrations
+docker-compose down
+docker-compose up -d --build
+docker volume rm books_postgres_data
+docker-compose up -d
+docker-compose exec web python manage.py makemigrations books
+docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py createsuperuser
+```
