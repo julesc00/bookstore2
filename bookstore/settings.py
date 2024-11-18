@@ -30,7 +30,8 @@ DEBUG = env("DJANGO_DEBUG")
 ALLOWED_HOSTS = [
     ".herokuapp.com",
     "localhost",
-    "127.0.0.1"
+    "127.0.0.1",
+    "127.0.0.0",
 ]
 
 app_name = "accounts"
