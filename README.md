@@ -40,3 +40,11 @@ sudo systemctl restart docker
 docker-compose up -d --build
 
 ```
+
+## Chapter 15 | Search
+Search packages to enhance filtering
+1. [django-watson](https://github.com/etianen/django-watson).
+2. [django-haystack](https://github.com/django-haystack/django-haystack).
+3. For PostgreSQL, rather use Djangos [full text search](https://docs.djangoproject.com/en/4.0/ref/contrib/postgres/search/).
+4. Enterprise-level solution [Elasticsearch](https://www.elastic.co/) or [Opensearch](https://aws.amazon.com/opensearch-service/) by AWS.
+5. Hosted enterprise-level solutions: [Swiftype](https://swiftype.com/) or [Algolia](https://www.algolia.com/).
